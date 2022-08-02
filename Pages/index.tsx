@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import {
   Header
-} from '../Components';
+} from '../components';
 
 export default function HomePage() {
   const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
@@ -16,7 +16,7 @@ export default function HomePage() {
 
   return (
     <div>
-      <Header title="Delop. Fuck. yuu. 🚀" />
+      <Header title="Delopppp. Fuckkkkk. y0uu. 🚀" />
       <ul>
         {names.map((name) => (
           <li key={name}>{`${name}`}</li>
