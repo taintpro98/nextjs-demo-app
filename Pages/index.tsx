@@ -1,29 +1,18 @@
-// index.html
-import React from 'react';
-import { useState } from 'react';
-import {
-  Header
-} from '../components';
+// pages/index.tsx
 
-export default function HomePage() {
-  const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+import type { ReactElement } from 'react'
+import type { NextPageWithLayout } from './_app'
 
-  const [likes, setLikes] = useState(0);
+const Page: NextPageWithLayout = () => {
+  return <p>hello world</p>
+}
 
-  const handleClick = () => {
-    setLikes(likes + 1);
-  }
-
+Page.getLayout = function getLayout(page: ReactElement) {
   return (
     <div>
-      <Header title="Delopppp. Fuckkkkk. y0uu. 🚀" />
-      <ul>
-        {names.map((name) => (
-          <li key={name}>{`${name}`}</li>
-        ))}
-      </ul>
-
-      <button onClick={handleClick}>Like ({likes})</button>
+      My Next App
     </div>
-  );
+  )
 }
+
+export default Page
