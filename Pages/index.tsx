@@ -1,18 +1,16 @@
 // pages/index.tsx
 
-import type { ReactElement } from 'react'
-import type { NextPageWithLayout } from './_app'
+import type { ReactElement } from "react";
+import type { NextPageWithLayout } from "./_app";
 
 const Page: NextPageWithLayout = () => {
-  return <p>hello world</p>
-}
+  return <p>hello world</p>;
+};
 
 Page.getLayout = function getLayout(page: ReactElement) {
   return (
-    <div>
-      My Next App
-    </div>
+    <>My Next App</>
   )
-}
+};
 
-export default Page
+export default Page;

@@ -1,12 +1,12 @@
 // components/layout.js
 
-import Navbar from './navbar'
-import Footer from './footer'
+// import Navbar from './navbar'
+import Footer from './Footer'
 
-export default function Layout({ children }) {
+export default function Layout({ children }: any) {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <main>{children}</main>
       <Footer />
     </>
