@@ -1,8 +1,12 @@
 // pages/_app.tsx
 
-import type { ReactElement, ReactNode } from "react";
+import { ReactElement, ReactNode, useEffect } from "react";
 import type { NextPage } from "next";
 import type { AppProps } from "next/app";
+import { 
+  Header, 
+  Layout 
+} from "../components";
 
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -13,10 +17,17 @@ type AppPropsWithLayout = AppProps & {
 };
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  // Use the layout defined at the page level, if available
-  const getLayout = Component.getLayout ?? ((page) => page);
-  console.log("fuck", pageProps);
 
-  // return getLayout(<Component {...pageProps} />);
-  return <>XXXX</>
+  useEffect(() => {
+    document.body.classList?.remove('loading');
+  })
+
+  return (
+    <>
+      <Header title={"Batman"}/>
+      <Layout pageProps={pageProps}>
+        <Component {...pageProps}/>
+      </Layout>
+    </>
+  )
 }
