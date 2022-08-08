@@ -1,33 +1,18 @@
-// pages/_app.tsx
-
-import { ReactElement, ReactNode, useEffect } from "react";
-import type { NextPage } from "next";
+// import 'assets/'
+import { useEffect } from "react";
 import type { AppProps } from "next/app";
-import { 
-  Header, 
-  Layout 
-} from "../components";
+import { Layout } from "@components/common";
 
-export type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode;
-};
-
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
-};
-
-export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-
+export default function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    document.body.classList?.remove('loading');
-  })
+    document.body.classList?.remove("loading");
+  }, []);
 
   return (
     <>
-      <Header title={"Batman"}/>
       <Layout pageProps={pageProps}>
-        <Component {...pageProps}/>
+        <Component {...pageProps} />
       </Layout>
     </>
-  )
+  );
 }

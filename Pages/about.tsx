@@ -1,7 +1,7 @@
-import Layout from "../components/Layout";
+import { Layout } from "@components/common";
 
-export default function About () {
-  return <div>About</div>
+export default function About() {
+  return <div>About</div>;
 }
 
 About.Layout = Layout;
