@@ -1,6 +1,12 @@
 import { Navbar, Footer } from "@components/common";
+import { FC, ReactNode } from "react";
 
-export default function Layout({ children }: any) {
+interface LayoutProps {
+  children: ReactNode;
+  pageProps: any;
+}
+
+const Layout: FC<LayoutProps> = ({ children, pageProps }) => {
   return (
     <>
       <Navbar />
@@ -10,3 +16,4 @@ export default function Layout({ children }: any) {
   )
 }
 
+export default Layout;

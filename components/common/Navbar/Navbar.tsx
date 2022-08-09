@@ -1,14 +1,15 @@
-import cn from 'clsx';
+import cn from "clsx";
+import { FC } from "react";
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <div className="topnav">
-      <a className="active" href="#home">
+      <a className="active" href="/">
         Home
       </a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
+      <a href="/about">About</a>
     </div>
   );
-}
+};
+
+export default Navbar;
